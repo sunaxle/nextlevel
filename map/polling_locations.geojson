@@ -1,0 +1,439 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SGT Fernando de la Rosa Memorial Library",
+        "address": "416 N. Tower Rd. Alamo, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1106532,
+          26.1852355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alton Recreation Center",
+        "address": "349 Dawes Ave. Alton, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3244926,
+          26.2840119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Amigos Del Valle",
+        "address": "1408 Silver Ave. Donna, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0491177,
+          26.165824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sergeant Juan Rodriguez Community Center",
+        "address": "320 W. Santa Rosa Ave. Edcouch, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9665877,
+          26.2938064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Elections Annex Building",
+        "address": "317 N. Closner Blvd. \u201cRear\u201d Edinburg, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1621316,
+          26.3037384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UTRGV",
+        "address": "1201 W. University Dr. Edinburg, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1671777,
+          26.3020173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Elsa Municipal Court",
+        "address": "216 E. 4th St. Elsa, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0039012,
+          26.2960888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Granjeno Public Facility",
+        "address": "6569 S. FM 494 Mission, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3146428,
+          26.1861248
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "La Villa ISD Multi-Purpose Service Center",
+        "address": "500 E. 9th St. La Villa, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9277991,
+          26.2963021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fireman\u2019s Pumphouse",
+        "address": "201 N. 1st St. McAllen, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2132702,
+          26.234542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lark Community Center",
+        "address": "2601 Lark Ave. McAllen, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2399922,
+          26.2621501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Palm View Community Center",
+        "address": "3401 Jordan Rd. McAllen, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2571307,
+          26.1834911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "STC Nursing Campus Building B",
+        "address": "1901 S. McColl Rd. McAllen, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2157275,
+          26.1838857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "STC Pecan Campus Building U",
+        "address": "3201 Pecan Blvd. McAllen, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2549096,
+          26.2190297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mercedes Civic Center",
+        "address": "520 E. 2nd St. Mercedes, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.906407,
+          26.1503922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bannworth Gym",
+        "address": "1822 N. Shary Rd. Mission, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2845738,
+          26.2177856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mission Parks and Recreation Center",
+        "address": "721 Bryan Rd. Mission, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3104006,
+          26.2108028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Veterans Memorial Pavilion",
+        "address": "300 S. Inspiration Rd. Mission, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3527729,
+          26.2075984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pct. 3 Field Operations Office",
+        "address": "8320 W. Mile 7 Rd. Mission, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3369096,
+          26.2462505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monte Alto ISD Teaching and Learning Center",
+        "address": "25149 1st St. Monte Alto, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9773489,
+          26.3713748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Palmview Recreation Center",
+        "address": "406 W. Veterans Blvd. Palmview, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3559373,
+          26.2341729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pct. 3 \u201cThe Mansion\u201d",
+        "address": "2401 Moorefield Rd. Palmview, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3546333,
+          26.2299353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jose \u201cPepe\u201d Salinas Center",
+        "address": "1011 W. Kelly Ave. Pharr, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1967819,
+          26.193068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Progreso Family Community Center",
+        "address": "510 N. FM 1015 Weslaco, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9910308,
+          26.1707366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Juan Memorial Library",
+        "address": "1010 S. Standard St. San Juan, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1590776,
+          26.1874156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sullivan City WIC Clinic",
+        "address": "371 W. Expressway 83 Sullivan City, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.5690959,
+          26.2797293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Franklin D. Roosevelt Complex",
+        "address": "814 E. Plaza St. Weslaco, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9867061,
+          26.164579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hidalgo Public Library",
+        "address": "710 Ram\u00f3n Ayala Dr. Hidalgo, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2612,
+          26.1009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "La Joya Youth Center",
+        "address": "604 Salomon Chapa Dr. La Joya, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4839,
+          26.2486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Development and Research Center",
+        "address": "850 W. Dicker Rd. Pharr, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2045,
+          26.1554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Carlos Endowment Center",
+        "address": "107 N. Sunflower Rd. Edinburg, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.113,
+          26.3115
+        ]
+      }
+    }
+  ]
+}

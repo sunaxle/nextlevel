@@ -1,0 +1,875 @@
+const electionDayLocationsData = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alamo Community Center",
+        "address": "1429 S. Tower Rd. Alamo, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1099836,
+          26.1895658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SGT Fernando de la Rosa Memorial Library",
+        "address": "416 N. Tower Rd. Alamo, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1106532,
+          26.1852355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alton Recreation Center",
+        "address": "349 Dawes Ave. Alton, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3156793,
+          26.2817935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Amigos Del Valle",
+        "address": "1408 Silver Ave. Donna, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0491177,
+          26.165824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sergeant Juan Rodriguez Community Center",
+        "address": "320 W. Santa Rosa Ave. Edcouch, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9665877,
+          26.2938064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B.L. Garza Middle School",
+        "address": "1202 N. Mon Mack Rd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2014717,
+          26.3113202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canterbury Elementary School",
+        "address": "2821 W. Canton Rd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1953077,
+          26.2822562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Economedes High School",
+        "address": "1414 N. Alamo Rd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1015669,
+          26.3103802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Edinburg Parks and Recreation Department",
+        "address": "315 E. Mark S. Pe\u00f1a Dr. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1633322,
+          26.2846018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Elections Annex Building",
+        "address": "317 N. Closner Blvd. \"Rear\" Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1621316,
+          26.3037384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Edinburg South Middle School",
+        "address": "601 W. Freddy Gonzalez Dr. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2058843,
+          26.2927855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Edinburg North High School",
+        "address": "3101 N. Closner Blvd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1585087,
+          26.3324288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Memorial Middle School",
+        "address": "3105 N. Doolittle Rd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1268491,
+          26.3245684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ramirez Elementary School",
+        "address": "1700 W. Alberta Rd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1878988,
+          26.2555021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Linn-San Manuel Fire Department",
+        "address": "21661 TX 186 Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1636141,
+          26.3007514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "UTRGV",
+        "address": "1201 W. University Dr. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1671777,
+          26.3020173
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Elsa Municipal Court",
+        "address": "216 E. 4th St. Elsa, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0039012,
+          26.2960888
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hargill Elementary School",
+        "address": "13394 4th St. Hargill, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0154239,
+          26.4457308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "La Villa ISD Multi-Purpose Service Center",
+        "address": "500 E. 9th St. La Villa, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9277991,
+          26.2963021
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Crockett Administration Annex",
+        "address": "2112 N. Main St. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2273535,
+          26.2455867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fireman\u2019s Pumphouse",
+        "address": "201 N. 1st St. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2132702,
+          26.234542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gonzalez Elementary School",
+        "address": "201 E. Martin Ave. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2158367,
+          26.2602487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lark Community Center",
+        "address": "2601 Lark Ave. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2399922,
+          26.2621501
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Milam Elementary School",
+        "address": "3800 N. Main St. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2273535,
+          26.2455867
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Palm View Community Center",
+        "address": "3401 Jordan Rd. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2571307,
+          26.1834911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "STC Nursing Building B",
+        "address": "1901 S. McColl Rd. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2157275,
+          26.1838857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "STC Pecan Building U",
+        "address": "3201 Pecan Blvd. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2549096,
+          26.2190297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mercedes Civic Center",
+        "address": "520 E. 2nd St. Mercedes, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.906407,
+          26.1503922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "STISD Central Office",
+        "address": "7001 W. Expressway 83 Mercedes, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.8687826,
+          26.1598078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bannworth Gym",
+        "address": "1822 N. Shary Rd. Mission, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2845738,
+          26.2177856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mission Parks and Recreation Center",
+        "address": "721 Bryan Rd. Mission, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3104006,
+          26.2108028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Veterans Memorial Pavilion",
+        "address": "300 S. Inspiration Rd. Mission, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3527729,
+          26.2075984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pct. 3 Field Operations Office",
+        "address": "8320 W. Mile 7 Rd. Mission, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.347387,
+          26.2476315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monte Alto ISD Teaching and Learning Center",
+        "address": "25149 1st St. Monte Alto, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9773489,
+          26.3713748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pct. 3 \u201cThe Mansion\u201d",
+        "address": "2401 N. Moorefield Rd. Palmview, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3546333,
+          26.2299353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Palmview Recreation Center",
+        "address": "406 W. Veterans Blvd. Palmview, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3559373,
+          26.2341729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jose \u201cPepe\u201d Salinas Center",
+        "address": "1011 W. Kelly Ave. Pharr, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1967819,
+          26.193068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pharr ONE",
+        "address": "1121 E. Nolana Loop. Pharr, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1960832,
+          26.2357672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Valley View ISD Staff Development Center",
+        "address": "9701 S. Jackson Rd. Pharr, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.217043,
+          26.1084059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Progreso Family Community Center",
+        "address": "510 N. FM 1015 Weslaco, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9910308,
+          26.1707366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Juan Memorial Library",
+        "address": "1010 S. Standard St. San Juan, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1590776,
+          26.1874156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sullivan City WIC Clinic",
+        "address": "371 W. Expressway 83 Sullivan City, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.5690959,
+          26.2797293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Franklin D. Roosevelt Complex",
+        "address": "814 E. Plaza St. Weslaco, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9867061,
+          26.164579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Louise Black Building",
+        "address": "700 S. Bridge Ave. Weslaco, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9828231,
+          26.1714101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pct. 1 Conference Center",
+        "address": "1902 Joe Stephens Ave. #101 Weslaco, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9713504,
+          26.1795048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "PFC Mario Ybarra Elementary School",
+        "address": "1800 Mile 10 N. Weslaco, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.0182104,
+          26.1404382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Stephen F. Austin Complex",
+        "address": "599 W. 4th St. Weslaco, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9986957,
+          26.1579116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Carlos Endowment Center",
+        "address": "107 Sunflower Rd. Edinburg, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.113,
+          26.3115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Granjeno Public Facility",
+        "address": "6569 S. FM 494 Granjeno, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3188,
+          26.1362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hidalgo Public Library",
+        "address": "710 Ram\u00f3n Ayala Dr. Hidalgo, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2612,
+          26.1009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "La Joya Youth Center",
+        "address": "604 Salomon Chapa Dr. La Joya, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4839,
+          26.2486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Immaculate Conception Parish Hall",
+        "address": "28212 S. FM 2058 McCook, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3917,
+          26.4833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Pe\u00f1itas Public Library",
+        "address": "1111 S. Main St. Pe\u00f1itas, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4414,
+          26.2307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Development and Research Center",
+        "address": "850 W. Dicker Rd. Pharr, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2045,
+          26.1554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Doedyns Elementary School",
+        "address": "1401 N. Raul Longoria Rd. San Juan, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1408,
+          26.2081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "San Juan Fire Station #2",
+        "address": "2301 N. Raul Longoria Rd. San Juan, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.1408,
+          26.215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "W.A. Todd Middle School",
+        "address": "400 N. Salinas Blvd. Donna, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.056,
+          26.1736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cayetano Cavazos Elementary School",
+        "address": "1501 W. Freddy Gonz\u00e1lez Dr. McAllen, TX",
+        "type": "election_day"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2423,
+          26.2625
+        ]
+      }
+    }
+  ]
+};

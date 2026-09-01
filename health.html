@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Valle Care & Adult Day Center | Family Clinic & Home Health • Hidalgo County, TX</title>
+  <meta name="description" content="Compassionate, bilingual healthcare and adult day care services in South Texas. Primary care, chronic illness management, pediatric wellness, and senior social activities in Pharr, San Juan, and Alamo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --health-blue: #0284C7;
+      --health-navy: #0F172A;
+      --health-teal: #0D9488;
+      --health-light: #F0F9FF;
+      --border: #E2E8F0;
+      --ink: #1E293B;
+      --muted: #64748B;
+      --white: #FFFFFF;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--health-light); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    
+    .top-bar { background: var(--health-navy); color: #fff; padding: 0.5rem 1rem; text-align: center; font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+    header { background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-wrap { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand h1 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 900; color: var(--health-navy); text-transform: uppercase; }
+    .brand p { font-size: 0.72rem; color: var(--health-teal); font-weight: 800; text-transform: uppercase; }
+    
+    .hero { background: linear-gradient(180deg, #fff 0%, #E0F2FE 100%); padding: 3.5rem 1.25rem 4.5rem; border-bottom: 1px solid var(--border); }
+    .hero-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+    .badge { display: inline-block; background: var(--health-teal); color: #fff; padding: 0.35rem 0.85rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.85rem; }
+    .hero-title { font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 900; color: var(--health-navy); text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-title span { color: var(--health-blue); }
+    .hero-p { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.75rem; max-width: 540px; }
+    
+    .btn { padding: 0.85rem 1.5rem; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .btn-teal { background: var(--health-teal); color: #fff; }
+    .btn-blue { background: var(--health-blue); color: #fff; }
+    .btn-whatsapp { background: #25D366; color: #fff; }
+    
+    .hero-card { background: #fff; border-radius: var(--radius); padding: 2rem; border: 1px solid var(--border); box-shadow: 0 16px 40px rgba(0,0,0,0.06); text-align: center; }
+    .clinic-seal { width: 100px; height: 100px; border-radius: 50%; background: var(--health-light); color: var(--health-teal); display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 1rem; border: 3px solid var(--health-teal); }
+    
+    section { padding: 4.5rem 1.25rem; }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .sec-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--health-teal); letter-spacing: 0.12em; margin-bottom: 0.35rem; }
+    .sec-title { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--health-navy); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .sec-rule { width: 45px; height: 4px; background: var(--health-teal); margin-bottom: 2.5rem; }
+    
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-box { background: #fff; border-radius: var(--radius); padding: 2rem 1.5rem; border-top: 4px solid var(--health-blue); box-shadow: 0 4px 16px rgba(0,0,0,0.03); border-left: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .service-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .service-box h4 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--health-navy); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .service-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    footer { background: var(--health-navy); color: rgba(255,255,255,0.7); padding: 3rem 1.25rem; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 900px) { .hero-grid, .services-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    ★ ACCEPTING MEDICARE, MEDICAID & PRIVATE INSURANCE ★ <span>|</span> FREE DOOR-TO-DOOR SENIOR TRANSPORT
+  </div>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <h1>Valle Care Health Center</h1>
+        <p>Family Clinic & Adult Day Care • Hidalgo County</p>
+      </div>
+      <a href="tel:9565550177" class="btn btn-teal" style="padding: 0.45rem 1rem; font-size: 0.78rem;">📞 (956) 555-0177</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="badge">★ Caring for Our Abuelitos & Families ★</div>
+        <h2 class="hero-title">
+          Compassionate Healthcare. <span>Dignity for Every Generation.</span>
+        </h2>
+        <p class="hero-p">
+          Providing specialized adult day care social programming, physical therapy, diabetic wellness checks, and family primary medical care across Pharr, San Juan, Alamo, and Edinburg.
+        </p>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#tours" class="btn btn-teal">Schedule a Free Tour →</a>
+          <a href="https://wa.me/19563937125?text=Hello%20Valle%20Care,%20I%20want%20to%20enroll%20a%20family%20member" target="_blank" class="btn btn-whatsapp">
+            💬 WhatsApp Intake
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="clinic-seal">🩺</div>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 900; color: var(--health-navy); text-transform: uppercase;">
+          Valle Care Center
+        </h3>
+        <p style="color: var(--health-teal); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-top: 0.25rem;">
+          Licensed Texas Adult Day Care & Clinic
+        </p>
+        <div style="margin-top: 1.25rem; padding: 1rem; background: var(--health-light); border-radius: 8px; font-size: 0.85rem; color: var(--muted); text-align: left;">
+          ✓ Free Door-to-Door Transportation<br>
+          ✓ Warm Nutritious Meals & Snack Menu<br>
+          ✓ Bingo, Music Therapy & Arts & Crafts<br>
+          ✓ On-Site Registered Nurses & Medication Mgmt
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="sec-label">Our Healthcare Services</p>
+      <h2 class="sec-title">Comprehensive Senior & Family Care</h2>
+      <div class="sec-rule"></div>
+
+      <div class="services-grid">
+        <div class="service-box">
+          <div class="service-icon">👵</div>
+          <h4>1. Adult Day Care Center</h4>
+          <p>A loving, vibrant daytime home for seniors featuring engaging group activities, salon services, lotería games, and daily medical monitoring by certified caregivers.</p>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">🚐</div>
+          <h4>2. Free Van Transportation</h4>
+          <p>Wheelchair-accessible air-conditioned fleet providing door-to-door morning pickup and afternoon dropoff across Pharr, San Juan, Alamo, and McAllen.</p>
+        </div>
+
+        <div class="service-box">
+          <div class="service-icon">💊</div>
+          <h4>3. Family Clinic & Wellness</h4>
+          <p>Walk-in consultations, blood pressure & glucose monitoring, flu vaccines, and chronic condition management with compassionate bilingual medical providers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="font-weight: 800; color: #fff; margin-bottom: 0.35rem; text-transform: uppercase;">
+      Valle Care Adult Day Care & Family Health Clinic
+    </p>
+    <p>800 E Expressway 83, San Juan, TX 78589 · 100% Bilingual Spanish/English Staff</p>
+  </footer>
+
+</body>
+</html>

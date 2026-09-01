@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  
+  <title>NextLevel Digital Studio | South Texas Premier Rapid Web & Campaign Broadcaster</title>
+  <meta name="description" content="South Texas premier rapid website broadcaster and digital studio. High-converting political campaign websites, legal defense portals, medical clinics, and local business PWA apps launched in 2 hours or less across the Rio Grande Valley.">
+  <meta name="keywords" content="South Texas web design, political campaign website Texas, precinct chair website, McAllen web design, Pharr TX web developer, RGV campaigns, bilingual websites Texas, 2-hour website launch">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0044C9;
+      --primary-dark: #002B82;
+      --primary-light: #EBF2FF;
+      --navy: #0A192F;
+      --navy-card: #112240;
+      --gold: #D49A37;
+      --gold-light: #FFF8E7;
+      --accent-green: #10B981;
+      --accent-red: #EF4444;
+      --ink: #0F172A;
+      --muted: #64748B;
+      --light-bg: #F8FAFC;
+      --border: #E2E8F0;
+      --white: #FFFFFF;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--ink);
+      background: var(--light-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; }
+
+    /* ===== TOP DISPATCH TICKER ===== */
+    .top-ticker {
+      background: var(--navy);
+      color: var(--gold);
+      padding: 0.6rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      flex-wrap: wrap;
+    }
+    .status-pulse {
+      width: 9px;
+      height: 9px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(16,185,129,0.3);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(16,185,129,0); }
+      100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+    }
+
+    /* ===== NAVBAR ===== */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    }
+    .nav-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--navy) 100%);
+      color: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0,68,201,0.25);
+    }
+    .brand-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .brand-title span { color: var(--primary); }
+    .brand-sub {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    .nav-menu a {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover { color: var(--primary); }
+
+    .btn-order-nav {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 900 !important;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-order-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(212,154,55,0.35);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero-sec {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+      padding: 3.5rem 1.5rem 4.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--gold);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-headline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 1040px;
+      margin: 0 auto 1.25rem;
+    }
+    .hero-headline span {
+      background: linear-gradient(135deg, var(--primary) 0%, #0070F3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 780px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1.75rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,68,201,0.3); }
+    .btn-gold-hero { background: var(--gold); color: var(--navy); }
+    .btn-gold-hero:hover { background: #B88228; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,154,55,0.35); }
+    .btn-white { background: #fff; color: var(--navy); border-color: var(--border); }
+    .btn-white:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Performance Guarantee Strip */
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      max-width: 1140px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .guarantee-box {
+      background: var(--white);
+      padding: 1.25rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 0.85rem;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .guarantee-icon { font-size: 1.75rem; flex-shrink: 0; }
+    .guarantee-box h4 { font-family: 'Montserrat', sans-serif; font-size: 0.92rem; font-weight: 800; color: var(--navy); text-transform: uppercase; }
+    .guarantee-box p { font-size: 0.78rem; color: var(--muted); line-height: 1.4; margin-top: 0.15rem; }
+
+    /* Regional Strip */
+    .regional-strip {
+      background: var(--navy);
+      color: #fff;
+      padding: 1.25rem;
+      margin-top: 3rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .regional-strip strong { color: var(--gold); }
+
+    /* ===== RECURSIVE LIVE APP SIMULATOR ===== */
+    .simulator-sec {
+      padding: 4.5rem 1.5rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+    }
+    .sim-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+    .sec-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+    }
+    .sec-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .sec-rule { width: 50px; height: 4px; background: var(--gold); margin: 0.5rem auto 1.5rem; border-radius: 2px; }
+
+    /* Industry Filter Tabs */
+    .industry-nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .ind-tab {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .ind-tab.active {
+      background: var(--navy);
+      color: var(--gold);
+      border-color: var(--navy);
+    }
+
+    /* Interactive Live App Selector Pills */
+    .app-pills-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      max-width: 1240px;
+      margin: 0 auto 2rem;
+    }
+    .app-pill-btn {
+      background: var(--light-bg);
+      border: 1.5px solid var(--border);
+      padding: 0.6rem 1.15rem;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--navy);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .app-pill-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .app-pill-btn.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 4px 16px rgba(0,68,201,0.3);
+    }
+    .app-pill-tag {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 20px;
+      font-weight: 800;
+      background: rgba(0,0,0,0.08);
+    }
+    .app-pill-btn.active .app-pill-tag {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Simulator Viewport Container */
+    .sim-viewport-card {
+      max-width: 1240px;
+      margin: 0 auto;
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      box-shadow: 0 24px 60px rgba(10,25,47,0.15);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .sim-top-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 1.5rem;
+      color: #fff;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .sim-active-info h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .sim-active-info p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .device-switch-group {
+      display: flex;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 4px;
+    }
+    .device-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.7);
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .device-btn.active {
+      background: #FFFFFF;
+      color: var(--navy);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .sim-frame-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* iPhone 16 Pro Frame Shell */
+    .iphone-frame {
+      width: 412px;
+      height: 760px;
+      background: #000000;
+      border-radius: 52px;
+      padding: 12px;
+      box-shadow: 0 0 0 4px #2c2c2e, 0 20px 50px rgba(0,0,0,0.5);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .iphone-frame.ipad-mode {
+      width: 780px;
+      height: 640px;
+      border-radius: 36px;
+      padding: 10px;
+    }
+    .iphone-frame.desktop-mode {
+      width: 100%;
+      height: 640px;
+      border-radius: 16px;
+      padding: 0;
+      box-shadow: none;
+      background: transparent;
+    }
+
+    /* Dynamic Island */
+    .dynamic-island {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 28px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 100;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+    .island-cam {
+      width: 10px;
+      height: 10px;
+      background: #1c1c1e;
+      border-radius: 50%;
+    }
+    .iphone-frame.ipad-mode .dynamic-island,
+    .iphone-frame.desktop-mode .dynamic-island { display: none; }
+
+    .iframe-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 42px;
+      border: none;
+      background: #FFFFFF;
+      overflow: hidden;
+      display: block;
+    }
+    .iphone-frame.ipad-mode .iframe-screen { border-radius: 28px; }
+    .iphone-frame.desktop-mode .iframe-screen { border-radius: 12px; }
+
+    /* Action bar below simulator */
+    .sim-bottom-bar {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: #fff;
+    }
+    .live-url-badge {
+      font-family: var(--font-mono);
+      background: rgba(255,255,255,0.1);
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ===== APPS DIRECTORY GALLERY ===== */
+    .directory-sec {
+      padding: 4.5rem 1.5rem;
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .app-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,68,201,0.08);
+      border-color: var(--primary);
+    }
+    .app-card-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      width: fit-content;
+      margin-bottom: 0.65rem;
+    }
+    .badge-slate { background: #FEF3C7; color: #92400E; }
+    .badge-pct { background: #DBEAFE; color: #1E40AF; }
+    .badge-mayor { background: #D1FAE5; color: #065F46; }
+    .badge-judge { background: #FCE7F3; color: #9D174D; }
+    .badge-law { background: #FFFBEB; color: #B45309; }
+    .badge-health { background: #E0F2FE; color: #0369A1; }
+
+    .app-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+    }
+    .app-card-sub {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.65rem;
+    }
+    .app-card-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .app-card-features {
+      list-style: none;
+      font-size: 0.78rem;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      border-top: 1px solid var(--border);
+      padding-top: 0.65rem;
+    }
+    .app-card-features li {
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .app-card-actions {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .btn-test {
+      flex: 1;
+      padding: 0.55rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-radius: 6px;
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-launch {
+      padding: 0.55rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border-radius: 6px;
+      background: var(--light-bg);
+      color: var(--navy);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== 2-HOUR PRICING MATRIX ===== */
+    .pricing-sec {
+      padding: 5rem 1.5rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .price-card {
+      background: var(--light-bg);
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .price-card.featured {
+      background: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: 0 16px 40px rgba(0,68,201,0.1);
+      transform: scale(1.03);
+    }
+    .featured-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+    }
+    .price-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .price-speed {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .price-amount {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .price-amount span { font-size: 1rem; color: var(--muted); font-weight: 700; }
+    .price-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-features {
+      list-style: none;
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+    }
+    .price-features li {
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--ink);
+    }
+    .price-features li strong { color: var(--navy); }
+
+    /* High-Margin Add-Ons Strip */
+    .addons-strip {
+      max-width: 1200px;
+      margin: 3.5rem auto 0;
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+    }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .addon-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .addon-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .addon-name {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 0.25rem 0;
+    }
+    .addon-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+
+    /* ===== INSTANT WHATSAPP ORDER BUILDER ===== */
+    .order-builder-sec {
+      padding: 5rem 1.5rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #0F233A 100%);
+      color: #FFFFFF;
+    }
+    .order-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+    .order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .order-input {
+      width: 100%;
+      padding: 0.9rem 1.15rem;
+      border-radius: 8px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .order-input:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.12);
+    }
+    .order-input::placeholder { color: rgba(255,255,255,0.4); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1080px) {
+      .apps-grid { grid-template-columns: 1fr 1fr; }
+      .addons-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      .nav-menu { display: none; }
+      .guarantee-grid { grid-template-columns: 1fr 1fr; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .price-card.featured { transform: none; }
+      .order-grid { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .iphone-frame { width: 100%; max-width: 380px; height: 680px; border-radius: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== TOP TICKER ===== -->
+  <div class="top-ticker">
+    <span class="status-pulse"></span>
+    <span>⚡ RAPID 2-HOUR WEBSITE ENGINE</span>
+    <span>|</span>
+    <span>SERVING SOUTH TEXAS & THE RIO GRANDE VALLEY</span>
+    <span>|</span>
+    <span style="color: #fff;">📞 DIRECT HELPLINE: (956) 393-7125 / (956) 655-8344</span>
+  </div>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <div class="brand-title">NextLevel <span>Studio</span></div>
+          <div class="brand-sub">South Texas Rapid Web & Campaign Engine</div>
+        </div>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="#simulator">Live App Simulator</a></li>
+        <li><a href="#portfolio">Live Directory (8 Apps)</a></li>
+        <li><a href="#services">South Texas Services</a></li>
+        <li><a href="#pricing">2-Hour Packages</a></li>
+        <li><a href="#order">Order Website</a></li>
+      </ul>
+
+      <a href="#order" class="btn-order-nav">
+        🚀 Launch Site ($199)
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-sec">
+    <div class="hero-container">
+      <div class="hero-badge-pill">
+        ★ The Premier Political, Legal & Civic Digital Studio in South Texas ★
+      </div>
+
+      <h1 class="hero-headline">
+        Turn Voters & Clients Into Action. <span>Built in Under 2 Hours.</span>
+      </h1>
+
+      <p class="hero-desc">
+        We build ultra-fast, high-converting websites and mobile PWA applications tailored specifically for South Texas candidates, Democratic precinct chairs, law firms, healthcare clinics, and regional small businesses. Engineered with 1-tap WhatsApp connectivity, Apple/Google Maps GIS polling navigation, and 100% Spanish/English bilingual support.
+      </p>
+
+      <div class="hero-cta-btns">
+        <a href="#simulator" class="btn btn-primary">
+          📱 Test Drive Live Apps Below →
+        </a>
+        <a href="#pricing" class="btn btn-gold-hero">
+          ⚡ 2-Hour Launch Packages ($199)
+        </a>
+        <a href="https://wa.me/19563937125?text=Hello!%20I%20want%20to%20order%20a%20website%20in%20South%20Texas." target="_blank" class="btn btn-white">
+          💬 WhatsApp Instant Quote
+        </a>
+      </div>
+
+      <!-- 4 Guarantees Strip -->
+      <div class="guarantee-grid">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">⚡</div>
+          <div>
+            <h4>2-Hour Turnaround</h4>
+            <p>From intake to live on Google and WhatsApp in 120 minutes or less.</p>
+          </div>
+        </div>
+        <div class="guarantee-box">
+          <div class="guarantee-icon">📱</div>
+          <div>
+            <h4>App-in-App PWA</h4>
+            <p>Voters and clients can install your app directly on their iPhone screen.</p>
+          </div>
+        </div>
+        <div class="guarantee-box">
+          <div class="guarantee-icon">🇪🇸</div>
+          <div>
+            <h4>100% Bilingual</h4>
+            <p>Native English & Spanish community letters, intakes, and consultations.</p>
+          </div>
+        </div>
+        <div class="guarantee-box">
+          <div class="guarantee-icon">🗺️</div>
+          <div>
+            <h4>1-Tap GPS Routing</h4>
+            <p>Direct Apple Maps & Google Maps navigation to polling hubs & clinics.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Coverage Strip -->
+      <div class="regional-strip">
+        <span>📍 <strong>PROUDLY SERVING SOUTH TEXAS:</strong></span>
+        <span>Pharr • McAllen • Mission • Edinburg • San Juan • Alamo • Donna • Weslaco • Mercedes • Harlingen • Brownsville • Rio Grande City • Laredo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECURSIVE LIVE APP SIMULATOR ===== -->
+  <section id="simulator" class="simulator-sec">
+    <div class="sim-header">
+      <p class="sec-badge">Interactive Live Previews</p>
+      <h2 class="sec-title">Recursive App Simulator</h2>
+      <div class="sec-rule"></div>
+      <p style="color: var(--muted); font-size: 1.05rem;">
+        Click any of our 8 active live South Texas applications below to test drive them in real-time inside this live smartphone viewport!
+      </p>
+    </div>
+
+    <!-- App Selector Pills -->
+    <div class="app-pills-row">
+      <button class="app-pill-btn active" onclick="switchApp('index.html', 'Next Level PSJA ISD Slate', '3-Candidate School Board Campaign & Volunteer PWA', 'https://sunaxle.github.io/nextlevel/')">
+        <span>🏫 PSJA ISD Slate</span>
+        <span class="app-pill-tag">School Board</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('olga.html', 'Olga Laura Cardoza (Pct. 146)', 'Democratic Precinct Chair • Pharr DRC Hub', 'https://sunaxle.github.io/nextlevel/olga.html')">
+        <span>⭐ Olga Cardoza</span>
+        <span class="app-pill-tag">Pct. 146</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('liza.html', 'Liza Cardoza (Pct. 35)', 'Democratic Precinct Chair • Issues Board & Polling', 'https://sunaxle.github.io/nextlevel/liza.html')">
+        <span>⭐ Liza Cardoza</span>
+        <span class="app-pill-tag">Pct. 35</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('alma.html', 'Alma Butcher (Pct. 84)', 'We Do More in 84! • Lark Center Polling Hub', 'https://sunaxle.github.io/nextlevel/alma.html')">
+        <span>⭐ Alma Butcher</span>
+        <span class="app-pill-tag">Pct. 84</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('mayor.html', 'Mayor Norie Gonzalez Garza', 'Mayoral Campaign • 4 Pillars & Mobilization Demo', 'https://sunaxle.github.io/nextlevel/mayor.html')">
+        <span>🏛️ Mayoral Campaign</span>
+        <span class="app-pill-tag">Citywide</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('justice.html', 'Judge Jaime Munoz (JP 2)', 'Judicial / Justice of the Peace Campaign Demo', 'https://sunaxle.github.io/nextlevel/justice.html')">
+        <span>⚖️ Judicial / JP 2</span>
+        <span class="app-pill-tag">Court</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('law.html', 'Garza & Treviño Law Group', 'Immigration, Injury & Bail Defense • South Texas', 'https://sunaxle.github.io/nextlevel/law.html')">
+        <span>⚖️ Immigration & Law</span>
+        <span class="app-pill-tag">Legal</span>
+      </button>
+
+      <button class="app-pill-btn" onclick="switchApp('health.html', 'Valle Care Health & Adult Day', 'Family Clinic & Adult Day Care • Hidalgo County', 'https://sunaxle.github.io/nextlevel/health.html')">
+        <span>🩺 Clinic & Adult Day</span>
+        <span class="app-pill-tag">Health</span>
+      </button>
+    </div>
+
+    <!-- Simulator Viewport -->
+    <div class="sim-viewport-card">
+      <div class="sim-top-toolbar">
+        <div class="sim-active-info">
+          <h3 id="simActiveTitle">Next Level PSJA ISD Slate</h3>
+          <p id="simActiveSub">3-Candidate School Board Campaign & Volunteer PWA</p>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+          <div class="device-switch-group">
+            <button class="device-btn active" id="btnPhone" onclick="setDevice('phone')">📱 Phone</button>
+            <button class="device-btn" id="btnTablet" onclick="setDevice('tablet')">📟 Tablet</button>
+            <button class="device-btn" id="btnDesktop" onclick="setDevice('desktop')">💻 Desktop</button>
+          </div>
+          <a id="simPopout" href="index.html" target="_blank" class="btn btn-gold-hero" style="padding: 0.45rem 0.85rem; font-size: 0.75rem;">
+            ↗ Open Tab
+          </a>
+        </div>
+      </div>
+
+      <!-- Viewport Shell -->
+      <div class="sim-frame-wrap">
+        <div id="iphoneFrame" class="iphone-frame">
+          <div class="dynamic-island">
+            <div class="island-cam"></div>
+            <div style="color: #fff; font-size: 9px; font-weight: 800;">5G</div>
+          </div>
+          <iframe id="simIframe" src="index.html" class="iframe-screen" title="App Preview"></iframe>
+        </div>
+      </div>
+
+      <!-- Action bar below simulator -->
+      <div class="sim-bottom-bar">
+        <div class="live-url-badge">
+          <span>● LIVE PRODUCTION:</span>
+          <span id="simUrlText">https://sunaxle.github.io/nextlevel/</span>
+        </div>
+        <div style="font-size: 0.82rem; color: rgba(255,255,255,0.7);">
+          ⚡ 100% Functional • Try scrolling, clicking buttons & submitting test forms!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8-APP PORTFOLIO DIRECTORY ===== -->
+  <section id="portfolio" class="directory-sec">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+        <p class="sec-badge">Full Portfolio Showcase</p>
+        <h2 class="sec-title">Our Active South Texas Digital Ecosystem</h2>
+        <div class="sec-rule"></div>
+        <p style="color: var(--muted); font-size: 1.05rem;">
+          Each application is custom-built for high conversion, instant loading speed, and frictionless community communication:
+        </p>
+      </div>
+
+      <div class="apps-grid">
+        
+        <!-- App 1 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-slate">School Board Slate</span>
+            <h3 class="app-card-title">Next Level PSJA ISD</h3>
+            <p class="app-card-sub">Dr. Cabrera, Jose Bravo JD, Dr. Puente</p>
+            <p class="app-card-desc">
+              School board campaign platform with Pixieset photo integration, voting center locators, 4-pillar agenda, and volunteer signup engine.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ 3 Candidate Credential Badges</li>
+              <li>✓ Interactive ZIP Code District Checker</li>
+              <li>✓ Grassroots Volunteer & Sign Queue</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('index.html', 'Next Level PSJA ISD Slate', '3-Candidate School Board Campaign & Volunteer PWA', 'https://sunaxle.github.io/nextlevel/')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="index.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 2 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-pct">Precinct Chair 146</span>
+            <h3 class="app-card-title">Olga Laura Cardoza</h3>
+            <p class="app-card-sub">Hidalgo County Democratic Precinct Chair</p>
+            <p class="app-card-desc">
+              Hyper-local grassroots hub featuring Pharr DRC as primary voting site, neighborhood drainage reporting, and official boundary breakdowns.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ Words from the Chair (Bilingual)</li>
+              <li>✓ Pharr DRC 1-Tap Apple/Google Maps</li>
+              <li>✓ Issues Board & WhatsApp Hotline</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('olga.html', 'Olga Laura Cardoza (Pct. 146)', 'Democratic Precinct Chair • Pharr DRC Voting Hub', 'https://sunaxle.github.io/nextlevel/olga.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="olga.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 3 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-pct">Precinct Chair 35</span>
+            <h3 class="app-card-title">Liza Cardoza</h3>
+            <p class="app-card-sub">Democratic Precinct Chair • Pct. 35</p>
+            <p class="app-card-desc">
+              Dedicated organizing hub for Precinct 35 families with direct WhatsApp hotline, Block Captain onboarding, and Pharr & San Juan voter locators.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ 1-Tap Call & WhatsApp to (956) 393-7125</li>
+              <li>✓ Electoral Representation Matrix</li>
+              <li>✓ "Am I in Precinct 35?" Street Search</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('liza.html', 'Liza Cardoza (Pct. 35)', 'Democratic Precinct Chair • Issues Board & Polling', 'https://sunaxle.github.io/nextlevel/liza.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="liza.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 4 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-pct">Precinct Chair 84</span>
+            <h3 class="app-card-title">Alma Butcher</h3>
+            <p class="app-card-sub">"We Do More in '84!" • Democratic Party</p>
+            <p class="app-card-desc">
+              Vibrant community website highlighting Lark Community Center as primary voting hub, neighborhood cleanups, ditch clearing, and GOTV rides.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ Lark Center 1-Tap Apple/Google Maps</li>
+              <li>✓ High-Res Hidalgo Democrats Photo Banner</li>
+              <li>✓ Join the '84 Action Team Form</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('alma.html', 'Alma Butcher (Pct. 84)', 'We Do More in 84! • Lark Center Polling Hub', 'https://sunaxle.github.io/nextlevel/alma.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="alma.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 5 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-mayor">Mayoral Campaign</span>
+            <h3 class="app-card-title">Mayor Norie G. Garza</h3>
+            <p class="app-card-sub">City of Mission Mayoral Re-Election Demo</p>
+            <p class="app-card-desc">
+              Executive mayoral platform showcasing $45M in drainage bonds, Anzalduas Bridge commercial cargo expansion, and public safety modernization.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ Mayoral Record & Economic Counters</li>
+              <li>✓ 4-Point Municipal Action Agenda</li>
+              <li>✓ Coalition Endorsement Showcase</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('mayor.html', 'Mayor Norie Gonzalez Garza', 'Mayoral Campaign • 4 Pillars & Mobilization Demo', 'https://sunaxle.github.io/nextlevel/mayor.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="mayor.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 6 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-judge">Judicial / JP 2</span>
+            <h3 class="app-card-title">Judge Jaime Munoz</h3>
+            <p class="app-card-sub">Justice of the Peace • Pct. 2, Pl. 2 Demo</p>
+            <p class="app-card-desc">
+              Judicial campaign template built with impartiality pledges, youth truancy diversion initiatives, and modern bilingual court access tools.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ Judicial Code & Fairness Principles</li>
+              <li>✓ Precinct 2 Countywide Coverage Guide</li>
+              <li>✓ Free Lawn Sign Request Workflow</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('justice.html', 'Judge Jaime Munoz (JP 2)', 'Judicial / Justice of the Peace Campaign Demo', 'https://sunaxle.github.io/nextlevel/justice.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="justice.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 7 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-law">Legal Defense</span>
+            <h3 class="app-card-title">Garza & Treviño Law</h3>
+            <p class="app-card-sub">Immigration, Injury & Criminal Defense</p>
+            <p class="app-card-desc">
+              Bilingual law firm template with $25M settlement showcase, 24/7 detention bond intake, and accident claim consultation triggers.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ 1-Tap 24/7 Emergency Consultation</li>
+              <li>✓ Practice Area Accordions (Immigration/Injury)</li>
+              <li>✓ Hidalgo, Cameron & Starr County Focus</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('law.html', 'Garza & Treviño Law Group', 'Immigration, Injury & Bail Defense • South Texas', 'https://sunaxle.github.io/nextlevel/law.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="law.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+        <!-- App 8 -->
+        <div class="app-card">
+          <div>
+            <span class="app-card-badge badge-health">Medical & Senior Care</span>
+            <h3 class="app-card-title">Valle Care Health</h3>
+            <p class="app-card-sub">Family Clinic & Adult Day Care Center</p>
+            <p class="app-card-desc">
+              Healthcare and adult day care platform featuring free van transportation intake, Medicare/Medicaid qualification guides, and tour bookings.
+            </p>
+            <ul class="app-card-features">
+              <li>✓ Free Senior Door-to-Door Van Intake</li>
+              <li>✓ Adult Day Center Activities & Menu</li>
+              <li>✓ Walk-In Family Clinic Scheduling</li>
+            </ul>
+          </div>
+          <div class="app-card-actions">
+            <button onclick="switchApp('health.html', 'Valle Care Health & Adult Day', 'Family Clinic & Adult Day Care • Hidalgo County', 'https://sunaxle.github.io/nextlevel/health.html')" class="btn-test">
+              📱 Test in Phone
+            </button>
+            <a href="health.html" target="_blank" class="btn-launch">↗ Open</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2-HOUR PRICING MATRIX ===== -->
+  <section id="pricing" class="pricing-sec">
+    <div class="container">
+      <div style="text-align: center; max-width: 740px; margin: 0 auto 3.5rem;">
+        <p class="sec-badge">Fast Turnaround Pricing</p>
+        <h2 class="sec-title">Choose Your South Texas Web Package</h2>
+        <div class="sec-rule"></div>
+        <p style="color: var(--muted); font-size: 1.05rem;">
+          Get your fully functional, mobile-ready website launched in 2 hours or less:
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        
+        <!-- Package 1: $199 -->
+        <div class="price-card">
+          <div>
+            <div class="price-name">Precinct / Small Biz Launch</div>
+            <div class="price-speed">⚡ Ready in 2 Hours</div>
+            <div class="price-amount">$199 <span>/ one-time</span></div>
+            <p class="price-desc">
+              Perfect for Democratic Precinct Chairs, Party Officers, Small Contractors, and Local Solo Practices.
+            </p>
+
+            <ul class="price-features">
+              <li>✓ <strong>Custom Map / GIS Boundary</strong> & Polling/Service Area</li>
+              <li>✓ <strong>Words from the Chair / Owner</strong> (English & Spanish)</li>
+              <li>✓ <strong>Issues / Services Board</strong> with 1-tap WhatsApp button</li>
+              <li>✓ <strong>Nearest Polling / Office GPS</strong> (Apple & Google Maps)</li>
+              <li>✓ <strong>Block Captain / Lead Request</strong> Signup Forms</li>
+              <li>✓ <strong>Free Lifetime Fast Hosting</strong> & SSL Certificate</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/19563937125?text=Hello!%20I%20want%20to%20order%20the%20$199%20Precinct/Small%20Biz%20Website%20Package." target="_blank" class="btn btn-primary" style="width: 100%;">
+            Order for $199 →
+          </a>
+        </div>
+
+        <!-- Package 2: $349 (Featured) -->
+        <div class="price-card featured">
+          <div class="featured-tag">★ Most Popular ★</div>
+          <div>
+            <div class="price-name">Candidate, Slate & Law Hub</div>
+            <div class="price-speed">⚡ Ready in 2–4 Hours</div>
+            <div class="price-amount">$349 <span>/ one-time</span></div>
+            <p class="price-desc">
+              Built for School Board Slates, City Council, Law Firms, Clinics, and Multi-Location Businesses.
+            </p>
+
+            <ul class="price-features">
+              <li>✓ <strong>Everything in $199 Package</strong> +</li>
+              <li>✓ <strong>Multi-Candidate / Attorney Profiles</strong> & High-Res Photography</li>
+              <li>✓ <strong>4-Pillar Platform / Practice Areas</strong> Accordions</li>
+              <li>✓ <strong>Interactive ZIP/District</strong> Address & Case Checker</li>
+              <li>✓ <strong>Client Testimonials & Endorsement Gallery</strong></li>
+              <li>✓ <strong>Mobile Sticky Floating Action Bar</strong> for instant phone calls</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/19563937125?text=Hello!%20I%20want%20to%20order%20the%20$349%20Candidate/Law%20Pro%20Hub%20Package." target="_blank" class="btn btn-gold-hero" style="width: 100%;">
+            Order for $349 →
+          </a>
+        </div>
+
+        <!-- Package 3: $499 -->
+        <div class="price-card">
+          <div>
+            <div class="price-name">Mayoral & Executive PWA Suite</div>
+            <div class="price-speed">⚡ Ready in Same Day</div>
+            <div class="price-amount">$499 <span>/ one-time</span></div>
+            <p class="price-desc">
+              Comprehensive digital mobilization machine for Mayors, County Judges, Clinics, and Regional Enterprises.
+            </p>
+
+            <ul class="price-features">
+              <li>✓ <strong>Everything in $349 Package</strong> +</li>
+              <li>✓ <strong>Installable Standalone PWA App</strong> (iOS & Android)</li>
+              <li>✓ <strong>Field Canvassing / Patient Intake</strong> Mobile Toolkit</li>
+              <li>✓ <strong>Interactive QR Code System</strong> for palm cards & flyers</li>
+              <li>✓ <strong>Live Budget / Project Milestones</strong> Tracker</li>
+              <li>✓ <strong>Priority Rapid Revisions</strong> for the entire election or fiscal year</li>
+            </ul>
+          </div>
+
+          <a href="https://wa.me/19563937125?text=Hello!%20I%20want%20to%20order%20the%20$499%20Mayoral/Executive%20PWA%20Package." target="_blank" class="btn btn-primary" style="width: 100%;">
+            Order for $499 →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- High-Margin Add-Ons Strip -->
+      <div class="addons-strip">
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 900; color: var(--navy); text-transform: uppercase; text-align: center;">
+          ⚡ Popular South Texas Add-On Services
+        </h3>
+
+        <div class="addons-grid">
+          <div class="addon-box">
+            <div class="addon-price">+$49</div>
+            <div class="addon-name">Print-Ready QR Code Kit</div>
+            <div class="addon-desc">High-res vector QR code formatted for push cards, door hangers & business cards.</div>
+          </div>
+
+          <div class="addon-box">
+            <div class="addon-price">+$99</div>
+            <div class="addon-name">WhatsApp Auto-Responder</div>
+            <div class="addon-desc">Instant pre-configured greeting and lead qualification directly on your WhatsApp.</div>
+          </div>
+
+          <div class="addon-box">
+            <div class="addon-price">+$149</div>
+            <div class="addon-name">Google Maps / SEO Booster</div>
+            <div class="addon-desc">Complete Google Business Profile setup, verification, and local South Texas map ranking.</div>
+          </div>
+
+          <div class="addon-box">
+            <div class="addon-price">$49/mo</div>
+            <div class="addon-name">VIP Maintenance & Edits</div>
+            <div class="addon-desc">Unlimited same-day text, photo, and event updates throughout your entire campaign or year.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSTANT WHATSAPP ORDER BUILDER ===== -->
+  <section id="order" class="order-builder-sec">
+    <div class="container">
+      <div class="order-box">
+        <div style="text-align: center;">
+          <span style="background: var(--gold); color: var(--navy); padding: 0.25rem 0.75rem; border-radius: 4px; font-weight: 900; font-size: 0.75rem; text-transform: uppercase;">
+            ★ Rapid 2-Hour Launch ★
+          </span>
+          <h2 style="font-family: 'Montserrat', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; text-transform: uppercase; margin: 0.75rem 0 0.25rem;">
+            Order Your Website in 60 Seconds
+          </h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">
+            Fill in your details and we will build and launch your custom website in 2 hours:
+          </p>
+        </div>
+
+        <form id="orderForm" onsubmit="handleQuickOrder(event)">
+          <div class="order-grid">
+            <div>
+              <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem;">Your Full Name *</label>
+              <input type="text" id="ordName" class="order-input" placeholder="e.g. Jane Doe" required />
+            </div>
+
+            <div>
+              <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem;">Campaign / Business / Organization *</label>
+              <input type="text" id="ordRole" class="order-input" placeholder="e.g. Precinct Chair 12 / Law Office / Roofing Co." required />
+            </div>
+
+            <div>
+              <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem;">City / County in South Texas *</label>
+              <select id="ordCity" class="order-input" style="background: rgba(255,255,255,0.12); color: #fff;">
+                <option value="Pharr, TX" style="color:#000;">Pharr, TX</option>
+                <option value="McAllen, TX" style="color:#000;">McAllen, TX</option>
+                <option value="Edinburg, TX" style="color:#000;">Edinburg, TX</option>
+                <option value="Mission, TX" style="color:#000;">Mission, TX</option>
+                <option value="San Juan, TX" style="color:#000;">San Juan, TX</option>
+                <option value="Alamo, TX" style="color:#000;">Alamo, TX</option>
+                <option value="Weslaco, TX" style="color:#000;">Weslaco, TX</option>
+                <option value="Donna, TX" style="color:#000;">Donna, TX</option>
+                <option value="Harlingen, TX" style="color:#000;">Harlingen, TX</option>
+                <option value="Brownsville, TX" style="color:#000;">Brownsville, TX</option>
+                <option value="Laredo, TX" style="color:#000;">Laredo, TX</option>
+                <option value="Other South Texas Community" style="color:#000;">Other South Texas Community</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 0.35rem;">Select Package *</label>
+              <select id="ordPkg" class="order-input" style="background: rgba(255,255,255,0.12); color: #fff;">
+                <option value="$199 Precinct / Small Biz Fast Launch" style="color:#000;">$199 Precinct / Small Biz Fast Launch (2-Hour)</option>
+                <option value="$349 Candidate / Slate / Law Pro Hub" style="color:#000;">$349 Candidate / Slate / Law Pro Hub (2–4 Hour)</option>
+                <option value="$499 Mayoral / Executive PWA Suite" style="color:#000;">$499 Mayoral / Executive PWA Suite (Same Day)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <button type="submit" class="btn btn-gold-hero" style="font-size: 1rem; padding: 1.1rem 2.5rem; width: 100%; max-width: 520px;">
+              🚀 Launch My Website via WhatsApp →
+            </button>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 0.75rem;">
+              ⚡ We immediately review your details and send your live preview link within 2 hours.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-brand">
+      <div style="font-weight: 900; font-size: 1.25rem; color: var(--gold); font-family: 'Montserrat', sans-serif;">
+        ⚡ NEXTLEVEL DIGITAL STUDIO
+      </div>
+    </div>
+
+    <p style="color: #fff; font-weight: 700; margin-bottom: 0.5rem;">
+      Empowering South Texas Candidates, Precinct Chairs, Attorneys & Local Businesses
+    </p>
+    <p style="color: rgba(255,255,255,0.6); font-size: 0.8rem;">
+      Pharr • McAllen • Mission • Edinburg • San Juan • Alamo • Weslaco • Brownsville • Laredo, Texas
+    </p>
+  </footer>
+
+  <!-- Interactive Simulator Script -->
+  <script>
+    function switchApp(pageUrl, title, sub, fullUrl) {
+      document.getElementById('simIframe').src = pageUrl;
+      document.getElementById('simActiveTitle').innerText = title;
+      document.getElementById('simActiveSub').innerText = sub;
+      document.getElementById('simUrlText').innerText = fullUrl;
+      document.getElementById('simPopout').href = pageUrl;
+
+      // Update pills
+      const buttons = document.querySelectorAll('.app-pill-btn');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes(pageUrl)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    function setDevice(mode) {
+      const frame = document.getElementById('iphoneFrame');
+      const bPhone = document.getElementById('btnPhone');
+      const bTablet = document.getElementById('btnTablet');
+      const bDesktop = document.getElementById('btnDesktop');
+
+      bPhone.classList.remove('active');
+      bTablet.classList.remove('active');
+      bDesktop.classList.remove('active');
+
+      if (mode === 'phone') {
+        frame.className = 'iphone-frame';
+        bPhone.classList.add('active');
+      } else if (mode === 'tablet') {
+        frame.className = 'iphone-frame ipad-mode';
+        bTablet.classList.add('active');
+      } else if (mode === 'desktop') {
+        frame.className = 'iphone-frame desktop-mode';
+        bDesktop.classList.add('active');
+      }
+    }
+
+    function handleQuickOrder(e) {
+      e.preventDefault();
+      const name = document.getElementById('ordName').value.trim();
+      const role = document.getElementById('ordRole').value.trim();
+      const city = document.getElementById('ordCity').value;
+      const pkg = document.getElementById('ordPkg').value;
+
+      const msg = `Hello NextLevel Studio!\n\nI would like to order a rapid 2-hour website.\n\n*Name:* ${name}\n*Role/Business:* ${role}\n*Location:* ${city}\n*Package:* ${pkg}\n\nPlease let me know what materials you need to get my website live today!`;
+      
+      const waUrl = `https://wa.me/19563937125?text=${encodeURIComponent(msg)}`;
+      window.open(waUrl, '_blank');
+    }
+  </script>
+</body>
+</html>

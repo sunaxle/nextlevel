@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Garza & Treviño Law Group | Immigration, Injury & Criminal Defense • South Texas</title>
+  <meta name="description" content="Premier South Texas bilingual legal defense. Immigration visas & deportation defense, auto and 18-wheeler truck accidents, and criminal defense in McAllen, Pharr, Edinburg, and Hidalgo County.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --law-navy: #0A192F;
+      --law-gold: #C59B27;
+      --law-gold-light: #FBF4DE;
+      --law-red: #8B0000;
+      --light-bg: #F8FAFC;
+      --border: #E2E8F0;
+      --ink: #111827;
+      --muted: #4B5563;
+      --white: #FFFFFF;
+      --radius: 10px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--light-bg); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    
+    .top-bar { background: var(--law-navy); color: var(--law-gold); padding: 0.5rem 1rem; text-align: center; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+    header { background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-wrap { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand h1 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 900; color: var(--law-navy); text-transform: uppercase; }
+    .brand p { font-size: 0.72rem; color: var(--law-gold); font-weight: 800; text-transform: uppercase; }
+    
+    .hero { background: linear-gradient(180deg, #fff 0%, var(--law-gold-light) 100%); padding: 3.5rem 1.25rem 4.5rem; border-bottom: 1px solid var(--border); }
+    .hero-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+    .badge { display: inline-block; background: var(--law-navy); color: #fff; padding: 0.35rem 0.85rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.85rem; }
+    .hero-title { font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 900; color: var(--law-navy); text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-title span { color: var(--law-gold); }
+    .hero-p { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.75rem; max-width: 540px; }
+    
+    .btn { padding: 0.85rem 1.5rem; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .btn-gold { background: var(--law-gold); color: var(--law-navy); }
+    .btn-navy { background: var(--law-navy); color: #fff; }
+    .btn-whatsapp { background: #25D366; color: #fff; }
+    
+    .hero-card { background: #fff; border-radius: var(--radius); padding: 2rem; border: 1px solid var(--border); box-shadow: 0 16px 40px rgba(0,0,0,0.08); text-align: center; }
+    .law-seal { width: 100px; height: 100px; border-radius: 50%; background: var(--law-navy); color: var(--law-gold); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; border: 3px solid var(--law-gold); }
+    
+    section { padding: 4.5rem 1.25rem; }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .sec-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--law-gold); letter-spacing: 0.12em; margin-bottom: 0.35rem; }
+    .sec-title { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--law-navy); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .sec-rule { width: 45px; height: 4px; background: var(--law-gold); margin-bottom: 2.5rem; }
+    
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .practice-box { background: #fff; border-radius: var(--radius); padding: 2rem 1.5rem; border-top: 4px solid var(--law-gold); box-shadow: 0 4px 16px rgba(0,0,0,0.03); border-left: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .practice-icon { font-size: 2.2rem; margin-bottom: 0.75rem; }
+    .practice-box h4 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--law-navy); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .practice-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+    
+    .stats-bar { background: var(--law-navy); color: #fff; border-radius: var(--radius); padding: 2.5rem 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; margin-top: 3.5rem; }
+    .stat-val { font-family: 'Montserrat', sans-serif; font-size: 2.4rem; font-weight: 900; color: var(--law-gold); }
+    .stat-lbl { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+
+    footer { background: var(--law-navy); color: rgba(255,255,255,0.7); padding: 3rem 1.25rem; text-align: center; font-size: 0.85rem; }
+    @media (max-width: 900px) { .hero-grid, .practice-grid { grid-template-columns: 1fr; } .stats-bar { grid-template-columns: 1fr 1fr; gap: 1rem; } }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    ★ 24/7 BILINGUAL LEGAL CONSULTATION ★ <span>|</span> PHARR • MCALLEN • EDINBURG • RGV
+  </div>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <h1>Garza & Treviño Law</h1>
+        <p>Attorneys & Counselors at Law • South Texas</p>
+      </div>
+      <a href="tel:9565550198" class="btn btn-navy" style="padding: 0.45rem 1rem; font-size: 0.78rem;">📞 (956) 555-0198</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="badge">★ Trusted South Texas Counsel ★</div>
+        <h2 class="hero-title">
+          Fierce Advocacy. <span>Proven Results for RGV Families.</span>
+        </h2>
+        <p class="hero-p">
+          Dedicated bilingual legal representation in Immigration & Asylum, Auto and Commercial 18-Wheeler Accidents, and Criminal Defense across Hidalgo, Cameron, and Starr Counties.
+        </p>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="#intake" class="btn btn-gold">Free Case Evaluation →</a>
+          <a href="https://wa.me/19563937125?text=Hello%20Garza%20&%20Treviño%20Law,%20I%20need%20a%20legal%20consultation" target="_blank" class="btn btn-whatsapp">
+            💬 WhatsApp 24/7
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="law-seal">⚖️</div>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; font-weight: 900; color: var(--law-navy); text-transform: uppercase;">
+          Garza & Treviño
+        </h3>
+        <p style="color: var(--law-gold); font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-top: 0.25rem;">
+          Over $25M+ Recovered For Clients
+        </p>
+        <div style="margin-top: 1.25rem; padding: 1rem; background: var(--light-bg); border-radius: 8px; font-size: 0.85rem; color: var(--muted); text-align: left;">
+          ✓ 100% Spanish & English Bilingual<br>
+          ✓ No Fee Unless We Win (Injury Cases)<br>
+          ✓ Immediate Detention Center Visits<br>
+          ✓ Flexible Payment Plans for Immigration
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="stats-bar">
+        <div>
+          <div class="stat-val">$25M+</div>
+          <div class="stat-lbl">Settlements & Verdicts</div>
+        </div>
+        <div>
+          <div class="stat-val">3,200+</div>
+          <div class="stat-lbl">Immigration Cases Won</div>
+        </div>
+        <div>
+          <div class="stat-val">24/7</div>
+          <div class="stat-lbl">Emergency Response</div>
+        </div>
+        <div>
+          <div class="stat-val">100%</div>
+          <div class="stat-lbl">Rio Grande Valley Rooted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="sec-label">Our Practice Areas</p>
+      <h2 class="sec-title">Comprehensive Legal Defense</h2>
+      <div class="sec-rule"></div>
+
+      <div class="practice-grid">
+        <div class="practice-box">
+          <div class="practice-icon">🛂</div>
+          <h4>1. Immigration & Visas</h4>
+          <p>Family petitions, U-Visas, VAWA, DACA renewals, asylum proceedings, and aggressive deportation bond hearings before Harlingen/Port Isabel courts.</p>
+        </div>
+
+        <div class="practice-box">
+          <div class="practice-icon">🚛</div>
+          <h4>2. Auto & 18-Wheeler Injury</h4>
+          <p>Fighting insurance giants for maximum compensation after catastrophic highway collisions, commercial truck wrecks, and wrongful death claims.</p>
+        </div>
+
+        <div class="practice-box">
+          <div class="practice-icon">🛡️</div>
+          <h4>3. Criminal & Bail Defense</h4>
+          <p>Protecting your constitutional rights against DWI, drug allegations, assault, and securing rapid magistrate bond releases across Hidalgo County.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="font-weight: 800; color: #fff; margin-bottom: 0.35rem; text-transform: uppercase;">
+      Garza & Treviño Law Group, PLLC
+    </p>
+    <p>1200 S Jackson Rd, McAllen, TX 78503 · Serving all of South Texas and the Rio Grande Valley</p>
+  </footer>
+
+</body>
+</html>

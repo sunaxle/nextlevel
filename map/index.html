@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidalgo County - PSJA Area Precincts & Polling Locations</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    header {
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .header-title h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    
+    .badge-psja {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid #f59e0b;
+      color: #fbbf24;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+    }
+
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-action:hover {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #f59e0b;
+      color: #fbbf24;
+    }
+
+    .search-input {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-family: inherit;
+      width: 140px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: #f59e0b;
+    }
+
+    .toggle-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    .legend-bar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      padding: 0.4rem 1.25rem;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      flex-wrap: wrap;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    
+    .legend-dot.psja {
+      background: #f59e0b;
+      border: 1px solid #b45309;
+      box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+    }
+
+    .legend-dot.early {
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+    }
+    
+    .legend-dot.election-day {
+      background: #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+    }
+    
+    .legend-dot.county {
+      background: #64748b;
+    }
+    
+    #map {
+      flex: 1;
+      width: 100%;
+      height: calc(100vh - 100px);
+      background: #0b1120;
+    }
+    
+    /* PSJA Centered Precinct Labels */
+    .psja-precinct-label {
+      background: rgba(15, 23, 42, 0.85) !important;
+      border: 1px solid #f59e0b !important;
+      color: #fbbf24 !important;
+      font-weight: 800 !important;
+      font-size: 11px !important;
+      padding: 1px 5px !important;
+      border-radius: 4px !important;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+      text-shadow: none !important;
+      letter-spacing: 0.02em;
+    }
+
+    .psja-precinct-label::before {
+      display: none !important;
+    }
+
+    /* Custom Map Popup & Controls Styling */
+    .leaflet-popup-content-wrapper {
+      background: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(12px);
+      color: #f8fafc !important;
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+    
+    .leaflet-popup-tip {
+      background: rgba(15, 23, 42, 0.95) !important;
+    }
+    
+    .leaflet-control-layers {
+      background: rgba(15, 23, 42, 0.92) !important;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 10px !important;
+      color: #f8fafc !important;
+      padding: 0.75rem 1rem !important;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+    }
+    
+    .leaflet-control-layers-overlays label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.4rem;
+      cursor: pointer;
+    }
+    
+    .custom-polling-icon {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+    
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .controls-bar {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      <h1>Hidalgo County Polling & Precincts</h1>
+      <span class="badge-psja">★ 44 PSJA Boxes Highlighted</span>
+    </div>
+
+    <div class="controls-bar">
+      <button class="btn-action" onclick="zoomToPSJA()">🎯 Focus PSJA</button>
+      <button class="btn-action" onclick="zoomToCounty()">🗺️ Full County</button>
+      
+      <label class="toggle-label">
+        <input type="checkbox" id="psjaToggle" onchange="togglePSJAOnly(this)">
+        <span>Isolate PSJA Only</span>
+      </label>
+
+      <input 
+        type="number" 
+        class="search-input" 
+        placeholder="Go to Box # (e.g. 192)" 
+        oninput="searchPrecinct(this)"
+      />
+    </div>
+  </header>
+
+  <div class="legend-bar">
+    <div class="legend-item">
+      <span class="legend-dot psja"></span>
+      <strong style="color: #fbbf24;">PSJA Precincts (44 Boxes)</strong>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot early"></span>
+      <span>Early Voting (🗳️ 1-Mi Radius)</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot election-day"></span>
+      <span>Election Day (🇺🇸 1-Mi Radius)</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot county"></span>
+      <span>Other County Precincts</span>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- GeoJSON Data Payloads -->
+  <script src="hidalgo_precincts.js"></script>
+  <script src="polling_locations.js"></script>
+  <script src="election_day_locations.js"></script>
+
+  <!-- Interactive Map Engine -->
+  <script src="map.js"></script>
+</body>
+</html>

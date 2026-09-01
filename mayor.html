@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Mayor Norie Gonzalez Garza | Re-Elect Mayor of Mission, Texas</title>
+  <meta name="description" content="Official Mayoral Campaign Website for Norie Gonzalez Garza, Mayor of Mission, Texas. Proven leadership, modern flood drainage, economic growth, public safety, and community parks.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --civic-navy: #0F233A;
+      --civic-blue: #1E50A0;
+      --civic-gold: #D49A37;
+      --civic-light: #F4F7FB;
+      --ink: #111827;
+      --muted: #4B5563;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--civic-light); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    
+    .top-bar { background: var(--civic-navy); color: var(--civic-gold); text-align: center; padding: 0.5rem; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+    
+    header { background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-wrap { max-width: 1200px; margin: 0 auto; padding: 0.75rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand h1 { font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 900; color: var(--civic-navy); text-transform: uppercase; }
+    .brand p { font-size: 0.72rem; color: var(--civic-blue); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    
+    .nav-links { display: flex; gap: 1.25rem; list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--ink); }
+    .nav-links a:hover { color: var(--civic-blue); }
+    
+    .hero { background: linear-gradient(180deg, #fff 0%, #E9F0FA 100%); padding: 3.5rem 1.25rem 4.5rem; border-bottom: 1px solid var(--border); }
+    .hero-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+    .badge { display: inline-block; background: var(--civic-navy); color: #fff; padding: 0.35rem 0.85rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.85rem; }
+    .hero-title { font-family: 'Montserrat', sans-serif; font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 900; color: var(--civic-navy); text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-title span { color: var(--civic-blue); }
+    .hero-p { font-size: 1.05rem; color: var(--muted); margin-bottom: 2rem; max-width: 540px; }
+    
+    .btn-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn { padding: 0.8rem 1.5rem; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; }
+    .btn-primary { background: var(--civic-blue); color: #fff; }
+    .btn-gold { background: var(--civic-gold); color: var(--civic-navy); }
+    .btn-outline { background: #fff; color: var(--civic-navy); border: 1.5px solid var(--border); }
+    
+    .hero-card { background: #fff; border-radius: var(--radius); padding: 2rem; border: 1px solid var(--border); box-shadow: 0 12px 32px rgba(0,0,0,0.06); text-align: center; }
+    .mayor-avatar { width: 140px; height: 140px; border-radius: 50%; background: var(--civic-navy); color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 3rem; font-weight: 900; margin: 0 auto 1rem; border: 4px solid var(--civic-gold); }
+    
+    section { padding: 4.5rem 1.25rem; }
+    .container { max-width: 1180px; margin: 0 auto; }
+    .sec-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--civic-blue); letter-spacing: 0.12em; margin-bottom: 0.35rem; }
+    .sec-title { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--civic-navy); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .sec-rule { width: 45px; height: 4px; background: var(--civic-gold); margin-bottom: 2.5rem; }
+    
+    .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .pillar-box { background: #fff; border-radius: var(--radius); padding: 1.75rem 1.25rem; border-top: 4px solid var(--civic-blue); box-shadow: 0 4px 14px rgba(0,0,0,0.03); }
+    .pillar-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .pillar-box h4 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--civic-navy); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .pillar-box p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    
+    .stats-row { background: var(--civic-navy); color: #fff; border-radius: var(--radius); padding: 2.5rem 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: center; margin-top: 3.5rem; }
+    .stat-n { font-family: 'Montserrat', sans-serif; font-size: 2.4rem; font-weight: 900; color: var(--civic-gold); }
+    .stat-t { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-top: 0.25rem; }
+
+    footer { background: var(--civic-navy); color: rgba(255,255,255,0.7); padding: 3rem 1.25rem; text-align: center; font-size: 0.85rem; }
+    
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    ★ MOVING MISSION FORWARD ★ <span>|</span> RE-ELECT MAYOR NORIE GONZALEZ GARZA
+  </div>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <h1>Norie Gonzalez Garza</h1>
+        <p>Mayor • City of Mission, Texas</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#record">Executive Record</a></li>
+        <li><a href="#pillars">4 Pillars</a></li>
+        <li><a href="#voting">Voting Info</a></li>
+        <li><a href="#volunteer">Join Team</a></li>
+        <li><a href="tel:9565808650" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.78rem;">📞 City Hall / Campaign</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="badge">★ Proven Mayoral Leadership ★</div>
+        <h2 class="hero-title">
+          Moving Mission <span>Forward Together.</span>
+        </h2>
+        <p class="hero-p">
+          Under Mayor Norie Gonzalez Garza's leadership, Mission has secured over $45 Million in regional drainage bonds, expanded police and fire response capabilities, created high-paying manufacturing jobs, and renovated community parks for our families.
+        </p>
+        <div class="btn-row">
+          <a href="#volunteer" class="btn btn-gold">🤝 Join Mayoral Coalition →</a>
+          <a href="#pillars" class="btn btn-outline">Read 4-Point Agenda</a>
+          <a href="https://wa.me/?text=Support%20Mayor%20Norie%20Gonzalez%20Garza%20for%20Mission!" target="_blank" class="btn btn-primary">💬 WhatsApp Share</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="mayor-avatar">NG</div>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--civic-navy); text-transform: uppercase;">
+          Norie Gonzalez Garza
+        </h3>
+        <p style="color: var(--civic-blue); font-weight: 700; font-size: 0.88rem; text-transform: uppercase; margin-top: 0.2rem;">
+          Mayor • Lifelong Civic Servant
+        </p>
+        <div style="margin-top: 1.25rem; padding: 1rem; background: var(--civic-light); border-radius: 8px; font-size: 0.85rem; color: var(--muted); text-align: left;">
+          ✓ Former School Board President<br>
+          ✓ Multi-Million Dollar Drainage Upgrades<br>
+          ✓ Anzalduas International Bridge Commercial Cargo Expansion<br>
+          ✓ Taxpayer Fiscal Accountability
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="stats-row">
+        <div>
+          <div class="stat-n">$45M+</div>
+          <div class="stat-t">Flood Drainage Projects</div>
+        </div>
+        <div>
+          <div class="stat-n">1,500+</div>
+          <div class="stat-t">New Logistics & Retail Jobs</div>
+        </div>
+        <div>
+          <div class="stat-n">8</div>
+          <div class="stat-t">Parks & Trail Expansions</div>
+        </div>
+        <div>
+          <div class="stat-n">100%</div>
+          <div class="stat-t">Dedicated to Mission Families</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pillars">
+    <div class="container">
+      <p class="sec-label">Mayoral Vision</p>
+      <h2 class="sec-title">4 Pillars for Mission's Future</h2>
+      <div class="sec-rule"></div>
+
+      <div class="pillars-grid">
+        <div class="pillar-box">
+          <div class="pillar-icon">🚧</div>
+          <h4>1. Regional Drainage & Roads</h4>
+          <p>Accelerating stormwater conveyance canals, culvert widening, and neighborhood street resurfacing to prevent flooding.</p>
+        </div>
+        <div class="pillar-box">
+          <div class="pillar-icon">💼</div>
+          <h4>2. Economic Development</h4>
+          <p>Expanding the Anzalduas International Bridge for commercial cargo traffic and supporting homegrown small businesses.</p>
+        </div>
+        <div class="pillar-box">
+          <div class="pillar-icon">🛡️</div>
+          <h4>3. Public Safety & Fire</h4>
+          <p>Equipping police and firefighters with cutting-edge emergency technology and strengthening community neighborhood watch.</p>
+        </div>
+        <div class="pillar-box">
+          <div class="pillar-icon">🌳</div>
+          <h4>4. Parks & Quality of Life</h4>
+          <p>Building inclusive playgrounds, splash pads, youth sports complexes, and senior wellness programming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p style="font-weight: 800; color: #fff; margin-bottom: 0.5rem; text-transform: uppercase;">
+      Political Advertising Paid for by the Campaign to Re-Elect Mayor Norie Gonzalez Garza
+    </p>
+    <p>City of Mission, Hidalgo County, Texas · In compliance with Texas Ethics Commission</p>
+  </footer>
+
+</body>
+</html>
