@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>Hidalgo County - PSJA Area Precincts & Polling Locations</title>
   
   <!-- Leaflet CSS -->
@@ -11,176 +11,396 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   
   <style>
+    :root {
+      --navy-dark: #0A192F;
+      --navy-glass: rgba(10, 25, 47, 0.92);
+      --gold: #F59E0B;
+      --gold-light: #FDE68A;
+      --green: #22C55E;
+      --purple: #A855F7;
+      --blue: #38BDF8;
+      --border-glass: rgba(255, 255, 255, 0.15);
+      --radius: 12px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
     
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
+    html, body {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
       overflow: hidden;
-      height: 100vh;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0B1120;
+      color: #F8FAFC;
+    }
+    
+    /* ===== FULL VIEWPORT MAP ===== */
+    #map {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: #0B1120;
+    }
+
+    /* ===== TOP FLOATING GLASS HEADER ===== */
+    .floating-top-bar {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      z-index: 1000;
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--navy-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      padding: 0.65rem 0.85rem;
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
     }
-    
-    header {
-      background: rgba(15, 23, 42, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 0.75rem 1.25rem;
+
+    .top-bar-main {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      z-index: 1000;
-      flex-wrap: wrap;
+      gap: 0.5rem;
     }
-    
-    .header-title {
+
+    .title-wrap {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
+      min-width: 0;
     }
-    
-    .header-title h1 {
+
+    .title-wrap h1 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       font-weight: 800;
-      color: #ffffff;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       letter-spacing: -0.01em;
     }
-    
+
     .badge-psja {
       background: rgba(245, 158, 11, 0.2);
-      border: 1px solid #f59e0b;
-      color: #fbbf24;
-      font-size: 0.75rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 0.68rem;
       font-weight: 800;
-      padding: 0.25rem 0.65rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 9999px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.25);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .controls-bar {
+    .top-actions-row {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
+      gap: 0.4rem;
+      flex-shrink: 0;
     }
 
-    .btn-action {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-glass);
+      color: #FFFFFF;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      font-family: inherit;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      transition: all 0.2s ease;
-      font-family: inherit;
+      transition: all 0.2s;
+      white-space: nowrap;
     }
-
-    .btn-action:hover {
+    .btn-glass:hover, .btn-glass:active {
       background: rgba(245, 158, 11, 0.2);
-      border-color: #f59e0b;
-      color: #fbbf24;
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+    .btn-glass.active {
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-color: var(--gold);
+      font-weight: 800;
     }
 
+    /* Horizontal Scrollable Quick Filter Chips */
+    .chips-scroll-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 2px;
+    }
+    .chips-scroll-bar::-webkit-scrollbar { display: none; }
+
+    .chip-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-glass);
+      color: #E2E8F0;
+      padding: 0.35rem 0.65rem;
+      border-radius: 20px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .chip-btn:hover, .chip-btn:active {
+      border-color: var(--gold);
+      color: #FFF;
+    }
+    .chip-btn.active {
+      background: rgba(245, 158, 11, 0.25);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .search-box-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
     .search-input {
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-glass);
       color: #fff;
-      padding: 0.4rem 0.75rem;
-      border-radius: 6px;
-      font-size: 0.8rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
       font-family: inherit;
       width: 140px;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, width 0.2s;
     }
-
     .search-input:focus {
-      border-color: #f59e0b;
+      border-color: var(--gold);
+      width: 160px;
     }
 
-    .toggle-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      cursor: pointer;
-      user-select: none;
-    }
-    
-    .legend-bar {
+    /* ===== FLOATING COMPACT LEGEND PILL ===== */
+    .floating-legend-bar {
+      position: absolute;
+      bottom: 20px;
+      left: 10px;
+      z-index: 1000;
+      background: var(--navy-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 30px;
+      padding: 0.35rem 0.75rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
-      gap: 1rem;
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      padding: 0.4rem 1.25rem;
-      background: rgba(15, 23, 42, 0.85);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      flex-wrap: wrap;
+      gap: 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #E2E8F0;
+      max-width: calc(100vw - 80px);
+      overflow-x: auto;
+      scrollbar-width: none;
     }
-    
-    .legend-item {
+    .floating-legend-bar::-webkit-scrollbar { display: none; }
+
+    .legend-chip {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.3rem;
+      white-space: nowrap;
     }
-    
     .legend-dot {
-      width: 11px;
-      height: 11px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       display: inline-block;
     }
-    
-    .legend-dot.psja {
-      background: #f59e0b;
-      border: 1px solid #b45309;
-      box-shadow: 0 0 8px rgba(245, 158, 11, 0.7);
+    .legend-dot.psja { background: var(--gold); box-shadow: 0 0 6px rgba(245,158,11,0.8); }
+    .legend-dot.early { background: var(--green); box-shadow: 0 0 6px rgba(34,197,94,0.8); }
+    .legend-dot.election-day { background: var(--purple); box-shadow: 0 0 6px rgba(168,85,247,0.8); }
+
+    /* ===== FLOATING MOBILE QUICK TOOLBAR (RIGHT SIDE) ===== */
+    .floating-tools-col {
+      position: absolute;
+      right: 12px;
+      bottom: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .tool-circle-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--navy-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      color: #FFFFFF;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      transition: transform 0.2s, background 0.2s;
+    }
+    .tool-circle-btn:active {
+      transform: scale(0.92);
+      background: var(--gold);
+      color: var(--navy-dark);
     }
 
-    .legend-dot.early {
-      background: #22c55e;
-      box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+    /* ===== MODERN BOTTOM SHEET FOR LAYERS & BASEMAPS ===== */
+    .bottom-sheet-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
     }
-    
-    .legend-dot.election-day {
-      background: #a855f7;
-      box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+    .bottom-sheet-overlay.show {
+      display: flex;
+      opacity: 1;
     }
-    
-    .legend-dot.county {
-      background: #64748b;
-    }
-    
-    #map {
-      flex: 1;
+
+    .bottom-sheet-content {
       width: 100%;
-      height: calc(100vh - 100px);
-      background: #0b1120;
+      max-width: 500px;
+      background: var(--navy-dark);
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      border: 1px solid var(--border-glass);
+      border-bottom: none;
+      padding: 1.5rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom));
+      box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
+    .bottom-sheet-overlay.show .bottom-sheet-content {
+      transform: translateY(0);
+    }
+
+    .sheet-handle {
+      width: 40px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    .sheet-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .sheet-close-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sheet-section-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .sheet-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
+    .sheet-option-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 0.75rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .sheet-option-card.active {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+    .sheet-option-card input {
+      accent-color: var(--gold);
+      width: 18px;
+      height: 18px;
+    }
+
     /* PSJA Centered Precinct Labels */
     .psja-precinct-label {
-      background: rgba(15, 23, 42, 0.85) !important;
+      background: rgba(15, 23, 42, 0.88) !important;
       border: 1px solid #f59e0b !important;
       color: #fbbf24 !important;
       font-weight: 800 !important;
@@ -189,127 +409,224 @@
       border-radius: 4px !important;
       box-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
       text-shadow: none !important;
-      letter-spacing: 0.02em;
     }
+    .psja-precinct-label::before { display: none !important; }
 
-    .psja-precinct-label::before {
-      display: none !important;
-    }
-
-    /* Custom Map Popup & Controls Styling */
+    /* Custom Map Popup Styling */
     .leaflet-popup-content-wrapper {
-      background: rgba(15, 23, 42, 0.95) !important;
-      backdrop-filter: blur(12px);
+      background: rgba(10, 25, 47, 0.95) !important;
+      backdrop-filter: blur(16px);
       color: #f8fafc !important;
       border: 1px solid rgba(245, 158, 11, 0.5);
-      border-radius: 10px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+      border-radius: 14px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
       font-family: 'Inter', sans-serif;
       font-size: 0.85rem;
-      line-height: 1.45;
+      padding: 4px;
     }
-    
-    .leaflet-popup-tip {
-      background: rgba(15, 23, 42, 0.95) !important;
-    }
-    
-    .leaflet-control-layers {
-      background: rgba(15, 23, 42, 0.92) !important;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.15) !important;
-      border-radius: 10px !important;
-      color: #f8fafc !important;
-      padding: 0.75rem 1rem !important;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-    }
-    
-    .leaflet-control-layers-overlays label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.4rem;
-      cursor: pointer;
-    }
-    
+    .leaflet-popup-tip { background: rgba(10, 25, 47, 0.95) !important; }
+
+    .leaflet-control-layers { display: none !important; } /* Replaced with sleek native mobile bottom sheet */
+
+    /* Custom Polling Icon */
     .custom-polling-icon {
-      font-size: 20px;
+      font-size: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.6));
     }
-    
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-      }
-      .controls-bar {
-        width: 100%;
-        justify-content: space-between;
-      }
+
+    /* Leaflet zoom control repositioned for mobile */
+    .leaflet-top.leaflet-left {
+      top: 115px !important;
+      left: 10px !important;
+    }
+    .leaflet-bar {
+      border: 1px solid var(--border-glass) !important;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3) !important;
+      border-radius: 8px !important;
+      overflow: hidden;
+    }
+    .leaflet-bar a {
+      background-color: var(--navy-glass) !important;
+      color: #FFFFFF !important;
+      border-bottom: 1px solid var(--border-glass) !important;
+    }
+
+    @media (max-width: 480px) {
+      .floating-top-bar { top: 6px; left: 6px; right: 6px; padding: 0.55rem 0.7rem; }
+      .title-wrap h1 { font-size: 0.85rem; }
+      .badge-psja { font-size: 0.62rem; padding: 0.15rem 0.4rem; }
+      .floating-legend-bar { bottom: 12px; left: 8px; font-size: 0.68rem; }
+      .floating-tools-col { right: 8px; bottom: 12px; }
+      .leaflet-top.leaflet-left { top: 110px !important; left: 6px !important; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-title">
-      <h1>Hidalgo County Polling & Precincts</h1>
-      <span class="badge-psja">★ 44 PSJA Boxes Highlighted</span>
+  <!-- Fullscreen Map -->
+  <div id="map"></div>
+
+  <!-- ===== FLOATING TOP GLASS BAR ===== -->
+  <div class="floating-top-bar">
+    <div class="top-bar-main">
+      <div class="title-wrap">
+        <h1>Hidalgo County & PSJA Map</h1>
+        <span class="badge-psja">★ 44 PSJA Boxes</span>
+      </div>
+
+      <div class="top-actions-row">
+        <button class="btn-glass" onclick="openLayersSheet()" aria-label="Open Layers">
+          🎛️ Layers
+        </button>
+        <button class="btn-glass" onclick="zoomToPSJA()" style="background: rgba(245,158,11,0.2); border-color: var(--gold); color: var(--gold-light);">
+          🎯 PSJA
+        </button>
+      </div>
     </div>
 
-    <div class="controls-bar">
-      <button class="btn-action" onclick="zoomToPSJA()">🎯 Focus PSJA</button>
-      <button class="btn-action" onclick="zoomToCounty()">🗺️ Full County</button>
-      
-      <label class="toggle-label">
-        <input type="checkbox" id="psjaToggle" onchange="togglePSJAOnly(this)">
-        <span>Isolate PSJA Only</span>
-      </label>
+    <!-- Horizontal Scrollable Quick Chips -->
+    <div class="chips-scroll-bar">
+      <button class="chip-btn active" id="chipPSJA" onclick="zoomToPSJA()">
+        🎯 Focus PSJA
+      </button>
 
-      <input 
-        type="number" 
-        class="search-input" 
-        placeholder="Go to Box # (e.g. 192)" 
-        oninput="searchPrecinct(this)"
-      />
-    </div>
-  </header>
+      <button class="chip-btn" id="chipCounty" onclick="zoomToCounty()">
+        🗺️ Full County
+      </button>
 
-  <div class="legend-bar">
-    <div class="legend-item">
-      <span class="legend-dot psja"></span>
-      <strong style="color: #fbbf24;">PSJA Precincts (44 Boxes)</strong>
-    </div>
-    <div class="legend-item">
-      <span class="legend-dot early"></span>
-      <span>Early Voting (🗳️ 1-Mi Radius)</span>
-    </div>
-    <div class="legend-item">
-      <span class="legend-dot election-day"></span>
-      <span>Election Day (🇺🇸 1-Mi Radius)</span>
-    </div>
-    <div class="legend-item">
-      <span class="legend-dot county"></span>
-      <span>Other County Precincts</span>
+      <button class="chip-btn" id="chipIsolate" onclick="togglePSJAOnlyButton()">
+        ⭐ Isolate PSJA Only
+      </button>
+
+      <button class="chip-btn" onclick="toggleEarlyVotingLayer()">
+        🗳️ Early Voting
+      </button>
+
+      <button class="chip-btn" onclick="toggleElectionDayLayer()">
+        🇺🇸 Election Day
+      </button>
+
+      <div class="search-box-wrap">
+        <input 
+          type="number" 
+          class="search-input" 
+          id="boxSearchInput"
+          placeholder="🔍 Go to Box #..." 
+          oninput="searchPrecinct(this)"
+        />
+      </div>
     </div>
   </div>
 
-  <div id="map"></div>
+  <!-- ===== FLOATING COMPACT LEGEND BAR ===== -->
+  <div class="floating-legend-bar">
+    <div class="legend-chip">
+      <span class="legend-dot psja"></span>
+      <span style="color: #fbbf24;">44 PSJA Boxes</span>
+    </div>
+    <div class="legend-chip">
+      <span class="legend-dot early"></span>
+      <span>Early Voting (🗳️ 1mi)</span>
+    </div>
+    <div class="legend-chip">
+      <span class="legend-dot election-day"></span>
+      <span>Election Day (🇺🇸 1mi)</span>
+    </div>
+  </div>
+
+  <!-- ===== FLOATING MOBILE TOOLS COLUMN ===== -->
+  <div class="floating-tools-col">
+    <button class="tool-circle-btn" onclick="locateUserGPS()" title="My Location" aria-label="Locate My GPS">
+      📍
+    </button>
+    <button class="tool-circle-btn" onclick="openLayersSheet()" title="Map Basemaps & Layers" aria-label="Layers">
+      🎛️
+    </button>
+    <button class="tool-circle-btn" onclick="zoomToPSJA()" title="Reset View" aria-label="Reset to PSJA">
+      🎯
+    </button>
+  </div>
+
+  <!-- ===== MODERN BOTTOM SHEET FOR LAYERS & BASEMAPS ===== -->
+  <div id="layersSheet" class="bottom-sheet-overlay" onclick="handleSheetBackdropClick(event)">
+    <div class="bottom-sheet-content">
+      <div class="sheet-handle"></div>
+
+      <div class="sheet-header">
+        <h3>🎛️ Map Layers & Basemaps</h3>
+        <button class="sheet-close-btn" onclick="closeLayersSheet()">✕</button>
+      </div>
+
+      <div class="sheet-section-title">Select Basemap</div>
+      <div class="sheet-options-grid">
+        <div class="sheet-option-card active" id="baseStreet" onclick="setBasemap('street')">
+          <span>🗺️ Street Map</span>
+        </div>
+        <div class="sheet-option-card" id="baseSatellite" onclick="setBasemap('satellite')">
+          <span>🛰️ Satellite</span>
+        </div>
+        <div class="sheet-option-card" id="baseOSM" onclick="setBasemap('osm')">
+          <span>🛣️ OpenStreet</span>
+        </div>
+      </div>
+
+      <div class="sheet-section-title">Toggle Overlays</div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label class="sheet-option-card" style="justify-content: space-between;">
+          <span>🗺️ Precinct Polygons (PSJA Area)</span>
+          <input type="checkbox" id="checkPrecincts" checked onchange="toggleOverlay('precincts', this.checked)">
+        </label>
+        <label class="sheet-option-card" style="justify-content: space-between;">
+          <span>🗳️ Early Voting Sites (1-Mi Radius)</span>
+          <input type="checkbox" id="checkEarly" checked onchange="toggleOverlay('early', this.checked)">
+        </label>
+        <label class="sheet-option-card" style="justify-content: space-between;">
+          <span>🇺🇸 Election Day Sites (1-Mi Radius)</span>
+          <input type="checkbox" id="checkElectionDay" checked onchange="toggleOverlay('electionDay', this.checked)">
+        </label>
+        <label class="sheet-option-card" style="justify-content: space-between;">
+          <span>⭐ Isolate PSJA Only (Hide County)</span>
+          <input type="checkbox" id="checkPSJAOnly" onchange="togglePSJAOnly(this)">
+        </label>
+      </div>
+
+      <button class="btn-glass active" style="width: 100%; justify-content: center; padding: 0.8rem; margin-top: 1.25rem; font-size: 0.9rem;" onclick="closeLayersSheet()">
+        ✓ Apply & Return to Map
+      </button>
+    </div>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <!-- GeoJSON Data Payloads -->
-  <script src="hidalgo_precincts.js"></script>
-  <script src="polling_locations.js"></script>
-  <script src="election_day_locations.js"></script>
+  <script src="map/hidalgo_precincts.js"></script>
+  <script src="map/polling_locations.js"></script>
+  <script src="map/election_day_locations.js"></script>
 
   <!-- Interactive Map Engine -->
-  <script src="map.js"></script>
+  <script src="map/map.js"></script>
+
+  <!-- Sheet UI Handlers -->
+  <script>
+    function openLayersSheet() {
+      const sheet = document.getElementById('layersSheet');
+      sheet.classList.add('show');
+    }
+
+    function closeLayersSheet() {
+      const sheet = document.getElementById('layersSheet');
+      sheet.classList.remove('show');
+    }
+
+    function handleSheetBackdropClick(e) {
+      if (e.target.id === 'layersSheet') {
+        closeLayersSheet();
+      }
+    }
+  </script>
 </body>
 </html>
