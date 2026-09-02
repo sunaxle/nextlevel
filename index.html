@@ -1289,6 +1289,7 @@
 
     // ===== LEAD STORAGE & CLOUD DISPATCH =====
     const CAMPAIGN_EMAIL = "nextlevelpsja@gmail.com";
+    const USER_BCC_EMAIL = "romerodeab@gmail.com"; // User verification email
     const CAMPAIGN_PHONE = "19563937125"; // Campaign dispatch WhatsApp
 
     function saveLead(lead) {
@@ -1304,26 +1305,40 @@
     }
 
     async function sendCloudNotification(payload) {
+      const emailBody = {
+        _subject: payload.subject,
+        _template: "table",
+        _captcha: "false",
+        _cc: USER_BCC_EMAIL,
+        "Submission Type": payload.type,
+        "Full Name": payload.name,
+        "Phone Number": payload.phone,
+        "Email Address": payload.email,
+        "Location / Address": payload.location,
+        "Volunteer Interests": payload.roles || "N/A",
+        "Timestamp": new Date().toLocaleString("en-US", { timeZone: "America/Chicago" })
+      };
+
       try {
-        await fetch(`https://formsubmit.co/ajax/${CAMPAIGN_EMAIL}`, {
+        // Primary Dispatch to Campaign Email + CC to User
+        const p1 = fetch(`https://formsubmit.co/ajax/${CAMPAIGN_EMAIL}`, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-          },
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(emailBody)
+        });
+
+        // Direct Backup Dispatch to User Email romerodeab@gmail.com
+        const p2 = fetch(`https://formsubmit.co/ajax/${USER_BCC_EMAIL}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
           body: JSON.stringify({
-            _subject: payload.subject,
-            _template: "table",
-            _captcha: "false",
-            "Submission Type": payload.type,
-            "Full Name": payload.name,
-            "Phone Number": payload.phone,
-            "Email Address": payload.email,
-            "Location / Address": payload.location,
-            "Volunteer Interests": payload.roles || "N/A",
-            "Timestamp": new Date().toLocaleString("en-US", { timeZone: "America/Chicago" })
+            ...emailBody,
+            _subject: `[LIVE COPY] ${payload.subject}`
           })
         });
+
+        await Promise.allSettled([p1, p2]);
+        console.log("✅ Live form notification dispatched to nextlevelpsja@gmail.com & romerodeab@gmail.com");
       } catch (err) {
         console.warn("Cloud notification fallback to local:", err);
       }
